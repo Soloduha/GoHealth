@@ -16,6 +16,11 @@ namespace ConsoleApp1.DefaultData
         {
             FillDisStatuses();
             FillDiseases();
+            FillDepartment();
+            FillDoctors();
+
+            FillWorkDays();
+            FillWorkDaysDoctors();
         }
 
         public void FillDisStatuses()
@@ -57,6 +62,42 @@ namespace ConsoleApp1.DefaultData
                 new Doctor() {Name="Олег",Surname="Титюк"},
                 new Doctor() {Name="Ігор",Surname="Захарченко"},
                 new Doctor() {Name="Наталія",Surname="Козак"}
+            });
+        }
+
+        //public void FillDisHistories()
+        //{
+        //    GHRepository<DiseaseHistory> repository = new GHRepository<DiseaseHistory>();
+
+        //    repository.AddRange(new List<DiseaseHistory>
+        //    {
+        //        new DiseaseHistory() {}
+        //    });
+        //}
+        
+        public void FillWorkDays()
+        {
+            GHRepository<WorkDay> repository = new GHRepository<WorkDay>();
+
+            repository.AddRange(new List<WorkDay> {
+                new WorkDay(){StartDate = new DateTime(2018,7,10,10,0,0), EndDate = new DateTime(2018,7,10,18,0,0)},
+                new WorkDay(){StartDate = new DateTime(2018,7,10,12,0,0), EndDate = new DateTime(2018,7,10,20,0,0)},
+                new WorkDay(){StartDate = new DateTime(2018,7,11,10,0,0), EndDate = new DateTime(2018,7,11,18,0,0)},
+                new WorkDay(){StartDate = new DateTime(2018,7,11,12,0,0), EndDate = new DateTime(2018,7,10,20,0,0)}
+            });
+        }
+
+        public void FillWorkDaysDoctors()
+        {
+            GHRepository<WorkDayDoctor> repository = new GHRepository<WorkDayDoctor>();
+
+            repository.AddRange(new List<WorkDayDoctor> {
+                new WorkDayDoctor(){DoctorId=1, WorkDayId=1},
+                new WorkDayDoctor(){DoctorId=2, WorkDayId=2},
+                new WorkDayDoctor(){DoctorId=3, WorkDayId=3},
+                new WorkDayDoctor(){DoctorId=4, WorkDayId=4},
+                new WorkDayDoctor(){DoctorId=5, WorkDayId=2},
+                new WorkDayDoctor(){DoctorId=6, WorkDayId=3}
             });
         }
     }
