@@ -12,17 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace UserInterface
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// </summary>   
+
     public partial class MainWindow : Window
     {
+        //public ObservableCollection<TestClass> myCollection;
         public MainWindow()
         {
             InitializeComponent();
+            //myCollection = new ObservableCollection<TestClass>();
+            //myCollection.Add(new TestClass() { Name = "Vlad", StartDate = DateTime.Now, EndDate = DateTime.Now});
+            //myCollection.Add(new TestClass() { Name = "Oleh", StartDate = DateTime.Now, EndDate = DateTime.Now });
+            //myCollection.Add(new TestClass() { Name = "Sasha", StartDate = DateTime.Now, EndDate = DateTime.Now });
+            //myCollection.Add(new TestClass() { Name = "Liza", StartDate = DateTime.Now, EndDate = DateTime.Now });
+            //MondayListView.ItemsSource = myCollection;
+        }
+
+        private void NextWeekButton_IsMouseCapturedChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
         }
     }
 }
